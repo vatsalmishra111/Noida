@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoidaWale.in | Manpower Supplier</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+    body{background:#f6f9fc;color:#333;}
+    nav{background:#0078d7;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:15px 8%;}
+    nav .logo{font-weight:700;font-size:22px;}
+    header{height:55vh;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;color:white;padding:0 10px;}
+    header h1{font-size:2.5rem;margin-bottom:10px;}
+    header span{color:#1eb2ff;}
+    header p{font-size:1rem;max-width:700px;margin:auto;}
+    .btn-primary{background:#1eb2ff;color:#fff;padding:10px 25px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:20px;transition:.3s;}
+    .btn-primary:hover{background:#0078d7;}
+    .highlights{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;background:#fff;padding:20px;color:#0078d7;font-weight:600;}
+    .forms{padding:50px 8%;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px;}
+    form{background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
+    form h2{text-align:center;color:#0078d7;margin-bottom:20px;}
+    input,select,textarea{width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;}
+    button{width:100%;background:#0078d7;color:#fff;padding:12px;border:none;border-radius:6px;font-weight:600;cursor:pointer;transition:.3s;}
+    button:hover{background:#1eb2ff;}
+    .roles{padding:50px 8%;background:#fff;}
+    .roles h3{text-align:center;color:#0078d7;margin-bottom:30px;font-size:1.8rem;}
+    .role-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;text-align:center;}
+    .role-grid div{background:#f0f8ff;padding:12px;border-radius:8px;border-left:4px solid #0078d7;transition:.3s;}
+    .role-grid div:hover{background:#0078d7;color:white;}
+    footer{background:#2c3e50;color:white;text-align:center;padding:20px;font-size:14px;margin-top:40px;}
+    @media(max-width:600px){header h1{font-size:1.7rem;}}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo"><i class="fa-solid fa-users"></i> NoidaWale.in</div>
+    <div>Manpower Supply</div>
+  </nav>
+
+  <header>
+    <div>
+      <h1>Connecting  <span>Job Seekers and Employers</span> Across Noida & Delhi</h1>
+      <p>Fast deployment, verified staff, and replacement in 48 hours. Trusted manpower supplier for companies & job seekers.</p>
+      <a href="#forms" class="btn-primary">Get Started</a>
+    </div>
+  </header>
+
+  <section class="highlights">
+    <div>⏱️ Deployment 24–48 hrs</div>
+    <div>🔁 Replacement 48 hrs</div>
+    <div>📁 Verified Documents</div>
+    <div>📍 Noida & Delhi Only</div>
+  </section>
+
+  <section id="forms" class="forms">
+    <!-- Job Seeker -->
+    <form id="jobSeekerForm" method="POST" action="submit.php">
+      <h2><i class="fa-solid fa-user-tie"></i> Job Seeker Form</h2>
+      <input type="hidden" name="form_type" value="job_seeker">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="tel" name="mobile" placeholder="Mobile Number" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="number" name="age" placeholder="Age (18–60)" min="18" max="60">
+      <select name="job_title" required>
+        <option value="">Select Job Role</option>
+        <option>Helper</option><option>Warehouse & Labour</option>
+        <option>Delivery Boy</option><option>Office Boy</option>
+        <option>Tailor</option><option>Packing Worker</option>
+        <option>Loader</option><option>Pantry Boy</option>
+        <option>Electrician (ITI)</option><option>Carpenter (ITI)</option>
+      </select>
+      <input type="text" name="area" placeholder="Your Area (Noida / Delhi)">
+      <textarea name="details" rows="2" placeholder="Experience, shift preference, etc."></textarea>
+      <button type="submit">Submit Application</button>
+    </form>
+
+    <!-- Client Form -->
+    <form id="clientForm" method="POST" action="submit.php">
+      <h2><i class="fa-solid fa-building"></i> Client Requirement Form</h2>
+      <input type="hidden" name="form_type" value="client">
+      <input type="text" name="name" placeholder="Full Name / Company Name" required>
+      <input type="tel" name="mobile" placeholder="Mobile Number" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="text" name="location" placeholder="Location (Noida / Delhi)" required>
+      <select name="position" required>
+        <option value="">Select Required Role</option>
+        <option>Helper</option><option>Warehouse & Labour</option>
+        <option>Delivery Boy</option><option>Office Boy</option>
+        <option>Tailor</option><option>Packing Worker</option>
+        <option>Loader</option><option>Pantry Boy</option>
+        <option>Electrician (ITI)</option><option>Carpenter (ITI)</option>
+      </select>
+      <input type="number" name="workers" placeholder="Number of Workers Needed" min="1" required>
+      <textarea name="additional" rows="3" placeholder="Mention timing, experience, etc."></textarea>
+      <button type="submit">Submit Requirement</button>
+    </form>
+  </section>
+
+  <section class="roles">
+    <h3>Common Roles We Provide</h3>
+    <div class="role-grid">
+      <div>👷 Helper</div><div>🏭 Warehouse & Labour</div><div>🚚 Delivery Boy</div>
+      <div>🧹 Safai Karamchari</div><div>🧵 Tailor</div><div>📦 Packing Worker</div>
+      <div>🧰 Loader</div><div>☕ Pantry Boy</div><div>🔌 Electrician (ITI)</div><div>🪚 Carpenter (ITI)</div>
+    </div>
+  </section>
+
+  <footer>© 2025 NoidaWale.in | Manpower Supply in Noida & Delhi</footer>
+
+  <script>
+    // Optional JS confirmation
+    document.querySelectorAll("form").forEach(form=>{
+      form.addEventListener("submit",()=>{
+        alert("Form submitted successfully! We'll contact you soon.");
+      });
+    });
+  </script>
+</body>
+</html>
