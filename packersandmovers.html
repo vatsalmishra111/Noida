@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noidawale.in | Packers & Movers - Noida & Delhi</title>
+
+<style>
+/* Reset */
+*{
+    margin:0; padding:0; box-sizing:border-box;
+}
+body{
+    font-family:"Poppins", sans-serif;
+    background:#f7f7f7;
+    overflow-x:hidden;
+}
+html{ scroll-behavior:smooth; }
+
+/* NAVBAR */
+.navbar{
+    position:fixed;
+    top:0; left:0;
+    width:100%;
+    background:#4da9ff; /* SKY BLUE */
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:999;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.navbar h2{
+    font-size:26px;
+    font-weight:800;
+    color:white;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    font-size:18px;
+    color:white;
+    font-weight:700;   /* BOLD TEXT */
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#002244; /* dark navy blue */
+}
+
+/* Hamburger */
+.hamburger{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+}
+.hamburger span{
+    width:28px;
+    height:3px;
+    background:white;
+    margin:5px 0;
+    transition:0.3s;
+}
+
+/* Mobile Menu */
+.mobile-menu{
+    position:fixed;
+    top:0; right:-100%;
+    height:100vh;
+    width:70%;
+    background:#4da9ff;
+    padding:80px 25px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    box-shadow:-3px 0 20px rgba(0,0,0,0.15);
+    transition:0.3s ease;
+    z-index:999;
+}
+.mobile-menu a{
+    text-decoration:none;
+    font-size:22px;
+    font-weight:800;
+    color:white;
+}
+
+/* HERO */
+.pm-hero{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover no-repeat;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+    padding-top:120px;
+}
+.pm-hero h1{
+    font-size:55px;
+    font-weight:800;
+    text-shadow:3px 3px 6px #000;
+    animation:fadeInDown 1.5s ease;
+}
+.pm-hero p{
+    max-width:800px;
+    margin:20px auto;
+    font-size:20px;
+    animation:fadeInUp 1.5s ease;
+}
+.pm-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 35px;
+    background:#ffb300;
+    color:#000;
+    font-weight:700;
+    border-radius:6px;
+    transition:0.3s;
+}
+.pm-btn:hover{ background:#ff9800; transform:scale(1.08); }
+
+/* FEATURES */
+.pm-features{
+    padding:70px 20px;
+    text-align:center;
+}
+.pm-features h2{
+    font-size:32px;
+    font-weight:800;
+    margin-bottom:40px;
+}
+.pm-feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:25px;
+    max-width:1200px;
+    margin:auto;
+}
+.pm-feature{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+.pm-feature:hover{
+    transform:scale(1.05);
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ABOUT */
+#about{
+    background:white;
+    padding:70px 25px;
+    text-align:center;
+}
+#about h2{
+    font-size:32px;
+    font-weight:800;
+}
+#about p{
+    max-width:900px;
+    margin:20px auto;
+    font-size:18px;
+    color:#444;
+    line-height:1.6;
+}
+
+/* SERVICES */
+.pm-services{
+    background:#ffeec8;
+    padding:60px 20px;
+    text-align:center;
+}
+.pm-services h2{
+    font-size:32px;
+    font-weight:800;
+}
+.pm-services ul{ list-style:none; }
+.pm-services li{
+    font-size:20px;
+    margin:12px 0;
+}
+
+/* BLOGS */
+#blogs{
+    padding:70px 20px;
+    text-align:center;
+}
+#blogs h2{
+    font-size:32px;
+    font-weight:800;
+}
+.blog-grid{
+    max-width:1100px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+.blog-card{
+    background:white;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+.blog-card img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+.blog-card h3{
+    margin:10px 0;
+    font-size:20px;
+}
+.blog-card a{
+    text-decoration:none;
+    color:#ff9800;
+    font-weight:bold;
+}
+
+/* CONTACT */
+.pm-contact{
+    padding:60px 20px;
+    background:#f0f0f0;
+    text-align:center;
+}
+.pm-contact h2{
+    font-size:32px;
+    font-weight:800;
+}
+.pm-form{
+    max-width:650px;
+    margin:25px auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+.pm-form input,
+.pm-form textarea{
+    width:100%;
+    padding:14px;
+    margin:10px 0;
+    font-size:16px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+.pm-form button{
+    width:100%;
+    padding:16px;
+    background:#ffb300;
+    border:none;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+.pm-form button:hover{
+    background:#ff9800;
+    transform:scale(1.05);
+}
+
+/* POPUP */
+#popup{
+    display:none;
+    background:rgba(0,0,0,0.7);
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    justify-content:center;
+    align-items:center;
+}
+.popup-box{
+    background:white;
+    padding:35px;
+    width:85%;
+    max-width:350px;
+    border-radius:12px;
+    text-align:center;
+}
+
+/* Animations */
+@keyframes fadeInUp{ from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fadeInDown{ from{opacity:0; transform:translateY(-20px);} to{opacity:1; transform:translateY(0);} }
+
+/* RESPONSIVE */
+@media(max-width:850px){
+    .nav-links{ display:none; }
+    .hamburger{ display:flex; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>Noidawale.in</h2>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#pm-services">Services</a>
+        <a href="#about">About Us</a>
+        <a href="#pm-contact">Contact Us</a>
+        <a href="#blogs">Blogs</a>
+    </div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#" onclick="toggleMenu()">Home</a>
+    <a href="#pm-services" onclick="toggleMenu()">Services</a>
+    <a href="#about" onclick="toggleMenu()">About Us</a>
+    <a href="#pm-contact" onclick="toggleMenu()">Contact Us</a>
+    <a href="#blogs" onclick="toggleMenu()">Blogs</a>
+</div>
+
+<!-- HERO -->
+<section class="pm-hero">
+    <div>
+        <h1>Noida & Delhi Packers & Movers</h1>
+        <p>We connect traders and customers with verified packers & movers across Noida & Delhi. Noidawale.in ensures trust, safety, fair pricing, and a smooth moving experience.</p>
+        <a href="#pm-contact" class="pm-btn">Connect Now</a>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="pm-features">
+    <h2>Why Choose Our Packers & Movers Network?</h2>
+    <div class="pm-feature-grid">
+        <div class="pm-feature"><h3>✔ Verified Providers</h3><p>Trusted and professional packers & movers in Noida & Delhi.</p></div>
+        <div class="pm-feature"><h3>✔ Middleman Support</h3><p>We coordinate end-to-end and ensure transparent pricing.</p></div>
+        <div class="pm-feature"><h3>✔ Fast Response</h3><p>Get multiple quotes within minutes.</p></div>
+        <div class="pm-feature"><h3>✔ 100% Transparency</h3><p>No hidden charges — everything is discussed upfront.</p></div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>At Noidawale.in, we bridge the gap between customers and verified packers & movers. Our mission is to simplify shifting with honest prices, reliable vendors, and fast service across Noida & Delhi. We act as a trusted medium ensuring quality, safety, and transparency for every shifting request.</p>
+</section>
+
+<!-- SERVICES -->
+<section id="pm-services" class="pm-services">
+    <h2>Our Packers & Movers Services</h2>
+    <ul>
+        <li>📦 Home Shifting (Noida & Delhi)</li>
+        <li>🏢 Office Relocation</li>
+        <li>🚛 Mini Truck & Tempo Services</li>
+        <li>📦 Bulk Goods Movement for Traders</li>
+        <li>🚚 City & Cross-city Shifting (Delhi NCR)</li>
+    </ul>
+</section>
+
+<!-- BLOGS -->
+<section id="blogs">
+    <h2>Latest Blogs</h2>
+    <div class="blog-grid">
+        <div class="blog-card">
+            <img src="https://images.unsplash.com/photo-1581091017372-7f72a4f549df" alt="">
+            <h3>How to Prepare for Home Shifting</h3>
+            <a href="#">Read More →</a>
+        </div>
+
+        <div class="blog-card">
+            <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb">
+            <h3>Top Tips for Office Relocation</h3>
+            <a href="#">Read More →</a>
+        </div>
+
+        <div class="blog-card">
+            <img src="https://images.unsplash.com/photo-1594818375069-7f7f02d4c9b1">
+            <h3>How to Avoid Hidden Charges in Moving</h3>
+            <a href="#">Read More →</a>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="pm-contact" class="pm-contact">
+    <h2>Connect With Us</h2>
+    <p>Fill the form & we will contact you within minutes.</p>
+
+    <form class="pm-form" id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="text" id="location" placeholder="Location (Noida / Delhi)" required>
+        <textarea id="message" placeholder="Describe your shifting requirement" required></textarea>
+        <button type="submit">Submit Request</button>
+    </form>
+</section>
+
+<!-- POPUP -->
+<div id="popup">
+    <div class="popup-box">
+        <h3>Thank You!</h3>
+        <p>Your request has been submitted.<br>We will contact you shortly.</p>
+        <button onclick="closePopup()">OK</button>
+    </div>
+</div>
+
+<script>
+/* Mobile Menu Toggle */
+function toggleMenu(){
+    const menu = document.getElementById("mobileMenu");
+    menu.style.right = menu.style.right === "0px" ? "-100%" : "0px";
+}
+
+/* Popup */
+const form = document.getElementById("contactForm");
+form.addEventListener("submit", function(e){
+    e.preventDefault();
+    document.getElementById("popup").style.display = "flex";
+    form.reset();
+});
+function closePopup(){
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>
