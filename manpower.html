@@ -4,51 +4,167 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NoidaWale.in | Manpower Supplier</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-    body{background:#f6f9fc;color:#333;}
-    nav{background:#0078d7;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:15px 8%;}
-    nav .logo{font-weight:700;font-size:22px;}
-    header{height:55vh;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;display:flex;justify-content:center;align-items:center;text-align:center;color:white;padding:0 10px;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:#f6f9fc;color:#333;font-family:'Poppins',sans-serif;}
+
+    /* ------------------ NAVBAR EXACT SAME (NO DOTS, NO UNDERLINE) ------------------ */
+    nav {
+      background: #0082e6;
+      height: 80px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      list-style: none; /* Ensures NO DOTS */
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: 7px 13px;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+      font-family: "Montserrat", sans-serif;
+      text-decoration: none; /* No underline */
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: #1b9bff; /* Same hover effect */
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        flex-direction: column;
+        justify-content: center;
+        transition: all 0.4s ease;
+      }
+
+      nav ul.active {
+        left: 0;
+      }
+
+      nav ul li a {
+        font-size: 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    body { padding-top: 80px; }
+
+    /* ------------------ HEADER ------------------ */
+    header{
+      height:55vh;
+      background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display:flex;justify-content:center;align-items:center;text-align:center;
+      color:white;padding:0 10px;
+    }
     header h1{font-size:2.5rem;margin-bottom:10px;}
     header span{color:#1eb2ff;}
     header p{font-size:1rem;max-width:700px;margin:auto;}
     .btn-primary{background:#1eb2ff;color:#fff;padding:10px 25px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:20px;transition:.3s;}
     .btn-primary:hover{background:#0078d7;}
+
+    /* ------------------ HIGHLIGHTS ------------------ */
     .highlights{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;background:#fff;padding:20px;color:#0078d7;font-weight:600;}
+
+    /* ------------------ FORMS ------------------ */
     .forms{padding:50px 8%;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px;}
     form{background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
     form h2{text-align:center;color:#0078d7;margin-bottom:20px;}
     input,select,textarea{width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;}
     button{width:100%;background:#0078d7;color:#fff;padding:12px;border:none;border-radius:6px;font-weight:600;cursor:pointer;transition:.3s;}
     button:hover{background:#1eb2ff;}
+
+    /* ------------------ ROLES ------------------ */
     .roles{padding:50px 8%;background:#fff;}
     .roles h3{text-align:center;color:#0078d7;margin-bottom:30px;font-size:1.8rem;}
     .role-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;text-align:center;}
-    .role-grid div{background:#f0f8ff;padding:12px;border-radius:8px;border-left:4px solid #0078d7;transition:.3s;}
+    .role-grid div{background:#f0f8ff;padding:12px;border-radius:8px;border-left:4px solid:#0078d7;transition:.3s;}
     .role-grid div:hover{background:#0078d7;color:white;}
+
+    /* ------------------ FOOTER ------------------ */
     footer{background:#2c3e50;color:white;text-align:center;padding:20px;font-size:14px;margin-top:40px;}
-    @media(max-width:600px){header h1{font-size:1.7rem;}}
+
+    @media(max-width:600px){
+      header h1{font-size:1.7rem;}
+    }
   </style>
 </head>
+
 <body>
 
+  <!-- NAVBAR (Exactly same as you wanted) -->
   <nav>
-    <div class="logo"><i class="fa-solid fa-users"></i> NoidaWale.in</div>
-    <div>Manpower Supply</div>
+    <div class="logo">NoidaWale.in</div>
+    <i class="fas fa-bars menu-toggle"></i>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#forms">Forms</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="http://blogs.noidavale.in/">Blogs</a></li>
+    </ul>
   </nav>
 
+  <!-- HEADER -->
   <header>
     <div>
-      <h1>Connecting  <span>Job Seekers and Employers</span> Across Noida & Delhi</h1>
+      <h1>Connecting <span>Job Seekers and Employers</span> Across Noida & Delhi</h1>
       <p>Fast deployment, verified staff, and replacement in 48 hours. Trusted manpower supplier for companies & job seekers.</p>
       <a href="#forms" class="btn-primary">Get Started</a>
     </div>
   </header>
 
+  <!-- HIGHLIGHTS -->
   <section class="highlights">
     <div>⏱️ Deployment 24–48 hrs</div>
     <div>🔁 Replacement 48 hrs</div>
@@ -56,9 +172,11 @@
     <div>📍 Noida & Delhi Only</div>
   </section>
 
+  <!-- FORMS -->
   <section id="forms" class="forms">
-    <!-- Job Seeker -->
-    <form id="jobSeekerForm" method="POST" action="submit.php">
+
+    <!-- Job Seeker Form -->
+    <form method="POST" action="submit.php">
       <h2><i class="fa-solid fa-user-tie"></i> Job Seeker Form</h2>
       <input type="hidden" name="form_type" value="job_seeker">
       <input type="text" name="name" placeholder="Full Name" required>
@@ -79,7 +197,7 @@
     </form>
 
     <!-- Client Form -->
-    <form id="clientForm" method="POST" action="submit.php">
+    <form method="POST" action="submit.php">
       <h2><i class="fa-solid fa-building"></i> Client Requirement Form</h2>
       <input type="hidden" name="form_type" value="client">
       <input type="text" name="name" placeholder="Full Name / Company Name" required>
@@ -98,8 +216,10 @@
       <textarea name="additional" rows="3" placeholder="Mention timing, experience, etc."></textarea>
       <button type="submit">Submit Requirement</button>
     </form>
+
   </section>
 
+  <!-- ROLES -->
   <section class="roles">
     <h3>Common Roles We Provide</h3>
     <div class="role-grid">
@@ -109,15 +229,28 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer>© 2025 NoidaWale.in | Manpower Supply in Noida & Delhi</footer>
 
+  <!-- NAVBAR JS -->
   <script>
-    // Optional JS confirmation
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('fa-times');
+    });
+  </script>
+
+  <!-- Form alert -->
+  <script>
     document.querySelectorAll("form").forEach(form=>{
       form.addEventListener("submit",()=>{
         alert("Form submitted successfully! We'll contact you soon.");
       });
     });
   </script>
+
 </body>
 </html>
