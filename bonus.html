@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Bonus Offers - NoidaWale.in</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ---------- RESET ---------- */
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      scroll-behavior: smooth;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    body { background: #f5f7fa; color: #333; }
+
+    /* ---------- NAVBAR (Copied Exactly) ---------- */
+    nav {
+      background: #0082e6;
+      height: 80px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: 7px 13px;
+      border-radius: 3px;
+      transition: 0.3s ease;
+    }
+
+    nav ul li a:hover, nav ul li a.active {
+      background: #1b9bff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.4s ease;
+      }
+      nav ul.active { left: 0; }
+      nav ul li a { font-size: 20px; }
+      .menu-toggle { display: block; }
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    .hero {
+      margin-top: 80px;
+      height: 55vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("https://images.unsplash.com/photo-1515165562835-c4c9e0e971e7?auto=format&fit=crop&w=1500&q=80") center/cover;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      color: white;
+      animation: fadeZoom 1.5s ease-out;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    @keyframes fadeZoom {
+      0% { opacity: 0; transform: scale(1.1); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 32px; }
+      .hero p { font-size: 15px; }
+    }
+
+    /* ---------- CATEGORY FILTERS ---------- */
+    .filters {
+      text-align: center;
+      padding: 40px 10px 10px;
+    }
+
+    .filters button {
+      background: white;
+      border: 2px solid #0082e6;
+      padding: 10px 22px;
+      margin: 8px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      color: #0082e6;
+      transition: 0.3s ease;
+      font-size: 15px;
+    }
+
+    .filters button:hover, .filters .active {
+      background: #0082e6;
+      color: white;
+    }
+
+    /* ---------- OFFERS GRID ---------- */
+    .offers-container {
+      max-width: 1300px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .offers-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding-bottom: 50px;
+    }
+
+    .offer-card {
+      background: white;
+      border-radius: 18px;
+      padding: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: fadeUp 1s forwards;
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .offer-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+
+    .offer-card h3 {
+      color: #0082e6;
+      margin-bottom: 10px;
+    }
+
+    .offer-card p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .offer-btn {
+      background: #ffcc00;
+      padding: 10px 15px;
+      border-radius: 8px;
+      color: #000;
+      font-weight: 700;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .offer-btn:hover {
+      background: #ffdb4d;
+    }
+
+    /* ---------- FOOTER (Same as Your Page) ---------- */
+    footer {
+      background: #2c3e50;
+      color: white;
+      padding: 50px 8%;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-box h3 { margin-bottom: 15px; color: #1b9bff; }
+
+    .footer-box p {
+      color: #ddd;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footer-box ul li a {
+      color: #ccc;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    .footer-box ul li a:hover { color: #1b9bff; }
+
+    .social-links a {
+      color: white;
+      font-size: 20px;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover { color: #1b9bff; }
+
+    hr {
+      margin: 25px 0;
+      border: none;
+      border-top: 1px solid #555;
+    }
+
+    .footer-bottom { text-align: center; font-size: 13px; color: #aaa; }
+  </style>
+</head>
+
+<body>
+
+  <!-- ---------- NAVBAR ---------- -->
+  <nav>
+    <div class="logo">NoidaWale.in</div>
+    <i class="fas fa-bars menu-toggle"></i>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="http://blogs.noidavale.in/">Blogs</a></li>
+    </ul>
+  </nav>
+
+  <!-- ---------- HERO ---------- -->
+  <section class="hero">
+    <h1>Noida Exclusive Offers & Deals</h1>
+    <p>Special discounts, coupons & festival offers – just for Noida residents!</p>
+  </section>
+
+  <!-- ---------- CATEGORY FILTERS ---------- -->
+  <div class="filters">
+    <button class="active">All</button>
+    <button>Food</button>
+    <button>Shopping</button>
+    <button>Electronics</button>
+    <button>Services</button>
+    <button>Events</button>
+  </div>
+
+  <!-- ---------- OFFERS SECTION ---------- -->
+  <section class="offers-container">
+    <div class="offers-grid">
+
+      <div class="offer-card">
+        <h3>🍕 Domino’s Noida</h3>
+        <p>Flat 40% OFF on orders above ₹249.</p>
+        <a href="#" class="offer-btn">Get Offer</a>
+      </div>
+
+      <div class="offer-card">
+        <h3>🛍️ DLF Mall of India</h3>
+        <p>Up to 60% OFF on fashion, beauty & electronics.</p>
+        <a href="#" class="offer-btn">Shop Now</a>
+      </div>
+
+      <div class="offer-card">
+        <h3>🍔 Burger King</h3>
+        <p>Buy 1 Get 1 FREE on Whopper – Noida outlets only.</p>
+        <a href="#" class="offer-btn">Claim Now</a>
+      </div>
+
+      <div class="offer-card">
+        <h3>🚗 UrbanClap</h3>
+        <p>Use code <b>NOIDA20</b> for 20% OFF on home services.</p>
+        <a href="#" class="offer-btn">Apply Coupon</a>
+      </div>
+
+      <div class="offer-card">
+        <h3>📱 Croma Noida</h3>
+        <p>Exclusive ₹1000 discount on mobiles above ₹9999.</p>
+        <a href="#" class="offer-btn">View Deal</a>
+      </div>
+
+      <div class="offer-card">
+        <h3>🎉 Noida Haat</h3>
+        <p>Flat 25% OFF on entry + food coupons this weekend.</p>
+        <a href="#" class="offer-btn">Book Entry</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ---------- FOOTER (Same as Contact Page) ---------- -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-box">
+        <h3>About Noidavale.in</h3>
+        <p>Noidavale.in connects residents with trusted service providers across Noida.</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Wazidpur, Sector 63, Noida, UP</p>
+        <p><i class="fas fa-phone-alt"></i> +91 9580881157</p>
+        <p><i class="fas fa-envelope"></i> support@noidawale.in</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <p class="footer-bottom">© 2025 Noidavale.in | All Rights Reserved</p>
+  </footer>
+
+  <!-- ---------- JS for Navbar ---------- -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('fa-times');
+    });
+  </script>
+
+</body>
+</html>
