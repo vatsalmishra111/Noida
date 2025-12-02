@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Cleaning & Pest Control - NoidaWale.in</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #0082e6;
+      height: 80px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    nav .logo {
+      color: #fff;
+      font-size: 26px;
+      font-weight: 700;
+    }
+    nav ul {
+      display: flex;
+      gap: 25px;
+    }
+    nav ul li a {
+      color: #fff;
+      padding: 7px 13px;
+      font-size: 16px;
+      text-transform: uppercase;
+      border-radius: 3px;
+      transition: .3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: #1b9bff;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+    @media(max-width:900px){
+      nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        height: 100vh;
+        width: 100%;
+        background: #2c3e50;
+        flex-direction: column;
+        justify-content: center;
+        transition: .4s;
+      }
+      nav ul.active { left: 0; }
+      .menu-toggle { display: block; }
+      nav ul li a { font-size: 20px; }
+    }
+
+    /* HERO */
+    .hero {
+      margin-top: 80px;
+      height: 55vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?auto=format&fit=crop&w=1600&q=80") no-repeat center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+    }
+    .hero p {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    /* SERVICES */
+    .services-section {
+      padding: 80px 7%;
+      text-align: center;
+    }
+    .services-section h2 {
+      font-size: 36px;
+      color: #0082e6;
+      margin-bottom: 10px;
+    }
+    .services-section p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 40px;
+    }
+    .services-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+      gap: 30px;
+    }
+    .service-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: .3s;
+      text-align: center;
+    }
+    .service-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,130,230,0.25);
+    }
+    .service-box i {
+      font-size: 45px;
+      color: #0082e6;
+      margin-bottom: 15px;
+    }
+    .service-box h3 {
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .service-box p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+    .btn {
+      margin-top: 15px;
+      display: inline-block;
+      padding: 10px 25px;
+      background: #0082e6;
+      color: #fff;
+      border-radius: 25px;
+      font-weight: 600;
+      transition: .3s;
+    }
+    .btn:hover {
+      background: #1b9bff;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      padding: 50px 7%;
+      margin-top: 80px;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px,1fr));
+      gap: 30px;
+    }
+    footer h3 { color: #1b9bff; margin-bottom: 15px; }
+    footer p, footer a { color: #ddd; font-size: 14px; }
+    .social-links a {
+      color: #fff;
+      font-size: 20px;
+      margin-right: 10px;
+      transition: .3s;
+    }
+    .social-links a:hover { color: #1b9bff; }
+    hr { margin: 25px 0; border: none; border-top: 1px solid #555; }
+    .footer-bottom { text-align: center; font-size: 13px; color: #aaa; }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">NoidaWale.in</div>
+    <i class="fas fa-bars menu-toggle"></i>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="cleaning.html">Cleaning</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="http://blogs.noidavale.in/">Blogs</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>Cleaning & Pest Control Services</h1>
+      <p>Professional, Fast & Affordable Home and Office Cleaning in Noida</p>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section class="services-section">
+    <h2>Our Cleaning Solutions</h2>
+    <p>Choose from our range of services designed for your comfort and hygiene.</p>
+
+    <div class="services-container">
+      <div class="service-box">
+        <i class="fas fa-broom"></i>
+        <h3>Home Deep Cleaning</h3>
+        <p>Complete home cleaning with kitchen, washrooms, floor scrubbing & dusting.</p>
+      </div>
+
+      <div class="service-box">
+        <i class="fas fa-spray-can-sparkles"></i>
+        <h3>Kitchen Cleaning</h3>
+        <p>Grease removal, chimney cleaning, counter sanitizing & more.</p>
+      </div>
+
+      <div class="service-box">
+        <i class="fas fa-restroom"></i>
+        <h3>Bathroom Cleaning</h3>
+        <p>Stain removal, disinfection, hard water mark cleaning & polishing.</p>
+      </div>
+
+      <div class="service-box">
+        <i class="fas fa-bed"></i>
+        <h3>Sofa & Mattress Cleaning</h3>
+        <p>Vacuuming, shampooing, stain removal & germ-free treatment.</p>
+      </div>
+
+      <div class="service-box">
+        <i class="fas fa-shield-virus"></i>
+        <h3>Pest Control</h3>
+        <p>Anti-termite, cockroach control, mosquito treatment & rodent solutions.</p>
+      </div>
+
+      <div class="service-box">
+        <i class="fas fa-building"></i>
+        <h3>Office Cleaning</h3>
+        <p>Daily/weekly office cleaning, workstation sanitization & floor care.</p>
+      </div>
+    </div>
+
+    <a href="contact.html" class="btn">Book Service</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>About NoidaWale.in</h3>
+        <p>NoidaWale.in connects residents with trusted local services.</p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <p><a href="index.html">Home</a></p>
+        <p><a href="cleaning.html">Cleaning</a></p>
+        <p><a href="aboutus.html">About</a></p>
+        <p><a href="contact.html">Contact</a></p>
+      </div>
+
+      <div>
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Wazidpur, Sector 63, Noida</p>
+        <p><i class="fas fa-phone-alt"></i> +91 9580881157</p>
+        <p><i class="fas fa-envelope"></i> support@noidawale.in</p>
+      </div>
+
+      <div>
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p class="footer-bottom">© 2025 NoidaWale.in | All Rights Reserved</p>
+  </footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('nav ul');
+  menuToggle.onclick = () =>{
+    navLinks.classList.toggle('active');
+    menuToggle.classList.toggle('fa-times');
+  };
+</script>
+</body>
+</html>
