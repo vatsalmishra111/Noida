@@ -1,29 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NoidaWale.in | Manpower Supplier</title>
+<html lang="en" dir="ltr">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<head>
+  <meta charset="utf-8">
+  <title>Manpower Supplier - NoidaWale.in</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{background:#f6f9fc;color:#333;font-family:'Poppins',sans-serif;}
+    /* RESET */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      list-style: none; text-decoration: none;
+      scroll-behavior: smooth;
+    }
 
-    /* ------------------ NAVBAR EXACT SAME (NO DOTS, NO UNDERLINE) ------------------ */
+    body {
+      font-family: "Montserrat", sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* ---------------- NAVBAR (Same as jobs.html) ---------------- */
     nav {
       background: #0082e6;
       height: 80px;
       width: 100%;
       position: fixed;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       z-index: 1000;
       display: flex;
       align-items: center;
@@ -37,14 +46,12 @@
       font-size: 26px;
       font-weight: 700;
       letter-spacing: 1px;
-      font-family: "Montserrat", sans-serif;
     }
 
     nav ul {
       display: flex;
       align-items: center;
       gap: 25px;
-      list-style: none; /* Ensures NO DOTS */
     }
 
     nav ul li a {
@@ -53,19 +60,17 @@
       text-transform: uppercase;
       padding: 7px 13px;
       border-radius: 3px;
-      transition: all 0.3s ease;
-      font-family: "Montserrat", sans-serif;
-      text-decoration: none; /* No underline */
+      transition: 0.3s;
     }
 
     nav ul li a:hover,
     nav ul li a.active {
-      background: #1b9bff; /* Same hover effect */
+      background: #1b9bff;
     }
 
     .menu-toggle {
       display: none;
-      font-size: 26px;
+      font-size: 24px;
       color: white;
       cursor: pointer;
     }
@@ -73,75 +78,149 @@
     @media (max-width: 900px) {
       nav ul {
         position: fixed;
-        top: 80px;
-        left: -100%;
+        top: 80px; left: -100%;
         width: 100%;
         height: 100vh;
         background: #2c3e50;
         flex-direction: column;
         justify-content: center;
-        transition: all 0.4s ease;
+        transition: 0.4s;
       }
 
-      nav ul.active {
-        left: 0;
-      }
-
-      nav ul li a {
-        font-size: 20px;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
+      nav ul.active { left: 0; }
+      nav ul li a { font-size: 20px; }
+      .menu-toggle { display: block; }
     }
 
-    body { padding-top: 80px; }
-
-    /* ------------------ HEADER ------------------ */
-    header{
-      height:55vh;
-      background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-      url('https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      display:flex;justify-content:center;align-items:center;text-align:center;
-      color:white;padding:0 10px;
+    /* ---------------- HERO (Same as jobs.html) ---------------- */
+    .hero {
+      margin-top: 80px;
+      height: 50vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+      animation: fadeSlide 1.5s ease-out;
     }
-    header h1{font-size:2.5rem;margin-bottom:10px;}
-    header span{color:#1eb2ff;}
-    header p{font-size:1rem;max-width:700px;margin:auto;}
-    .btn-primary{background:#1eb2ff;color:#fff;padding:10px 25px;border-radius:6px;text-decoration:none;display:inline-block;margin-top:20px;transition:.3s;}
-    .btn-primary:hover{background:#0078d7;}
 
-    /* ------------------ HIGHLIGHTS ------------------ */
-    .highlights{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;background:#fff;padding:20px;color:#0078d7;font-weight:600;}
+    @keyframes fadeSlide {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
 
-    /* ------------------ FORMS ------------------ */
-    .forms{padding:50px 8%;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px;}
-    form{background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);}
-    form h2{text-align:center;color:#0078d7;margin-bottom:20px;}
-    input,select,textarea{width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:6px;}
-    button{width:100%;background:#0078d7;color:#fff;padding:12px;border:none;border-radius:6px;font-weight:600;cursor:pointer;transition:.3s;}
-    button:hover{background:#1eb2ff;}
+    .hero h1 { font-size: 42px; font-weight: 700; }
+    .hero p { margin-top: 10px; font-size: 18px; }
 
-    /* ------------------ ROLES ------------------ */
-    .roles{padding:50px 8%;background:#fff;}
-    .roles h3{text-align:center;color:#0078d7;margin-bottom:30px;font-size:1.8rem;}
-    .role-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;text-align:center;}
-    .role-grid div{background:#f0f8ff;padding:12px;border-radius:8px;border-left:4px solid:#0078d7;transition:.3s;}
-    .role-grid div:hover{background:#0078d7;color:white;}
+    /* ---------------- FORM BOX ---------------- */
+    .form-section {
+      padding: 60px 10%;
+      display: flex;
+      justify-content: center;
+    }
 
-    /* ------------------ FOOTER ------------------ */
-    footer{background:#2c3e50;color:white;text-align:center;padding:20px;font-size:14px;margin-top:40px;}
+    .form-box {
+      background: white;
+      width: 100%;
+      max-width: 650px;
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      animation: zoomIn 1s ease;
+    }
 
-    @media(max-width:600px){
-      header h1{font-size:1.7rem;}
+    @keyframes zoomIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .form-box h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 28px;
+      color: #0082e6;
+    }
+
+    .form-box label {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .form-box input,
+    .form-box select,
+    .form-box textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 18px;
+      border: 1.5px solid #ccc;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .form-box input:focus,
+    .form-box select:focus,
+    .form-box textarea:focus {
+      border-color: #0082e6;
+      box-shadow: 0 0 5px rgba(0,130,230,0.3);
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: #0082e6;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-submit:hover { background: #1b9bff; }
+
+    /* ---------------- FOOTER (Same as jobs.html) ---------------- */
+    footer {
+      background: #2c3e50;
+      color: white;
+      padding: 50px 8%;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-box h3 { margin-bottom: 15px; color: #1b9bff; }
+    .footer-box p { color: #ddd; font-size: 14px; margin-bottom: 10px; }
+    .footer-box ul li a { color: #ccc; transition: 0.3s; font-size: 14px; }
+    .footer-box ul li a:hover { color: #1b9bff; }
+
+    .social-links a {
+      color: white;
+      font-size: 20px;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+    .social-links a:hover { color: #1b9bff; }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 25px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR (Exactly same as you wanted) -->
+  <!-- NAVBAR -->
   <nav>
     <div class="logo">NoidaWale.in</div>
     <i class="fas fa-bars menu-toggle"></i>
@@ -150,108 +229,130 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="index.html#services">Services</a></li>
       <li><a href="aboutus.html">About Us</a></li>
+      <li><a class="active" href="manpower.html">Manpower</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
       <li><a href="contact.html">Contact Us</a></li>
       <li><a href="http://blogs.noidavale.in/">Blogs</a></li>
     </ul>
   </nav>
 
-  <!-- HEADER -->
-  <header>
+  <!-- HERO -->
+  <section class="hero">
     <div>
-      <h1>Connecting <span>Job Seekers and Employers</span> Across Noida & Delhi</h1>
-      <p>Fast deployment, verified staff, and replacement in 48 hours. Trusted manpower supplier for companies & job seekers.</p>
-      <a href="#forms" class="btn-primary">Get Started</a>
+      <h1>Manpower Requirement Form</h1>
+      <p>Hire verified staff fast — We supply manpower in Noida & Delhi</p>
     </div>
-  </header>
-
-  <!-- HIGHLIGHTS -->
-  <section class="highlights">
-    <div>⏱️ Deployment 24–48 hrs</div>
-    <div>🔁 Replacement 48 hrs</div>
-    <div>📁 Verified Documents</div>
-    <div>📍 Noida & Delhi Only</div>
   </section>
 
-  <!-- FORMS -->
-  <section id="forms" class="forms">
+  <!-- FORM SECTION -->
+  <section class="form-section">
+    <div class="form-box">
+      <h2>Client Requirement Form</h2>
 
-    <!-- Job Seeker Form -->
-    <form method="POST" action="submit.php">
-      <h2><i class="fa-solid fa-user-tie"></i> Job Seeker Form</h2>
-      <input type="hidden" name="form_type" value="job_seeker">
-      <input type="text" name="name" placeholder="Full Name" required>
-      <input type="tel" name="mobile" placeholder="Mobile Number" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="number" name="age" placeholder="Age (18–60)" min="18" max="60">
-      <select name="job_title" required>
-        <option value="">Select Job Role</option>
-        <option>Helper</option><option>Warehouse & Labour</option>
-        <option>Delivery Boy</option><option>Office Boy</option>
-        <option>Tailor</option><option>Packing Worker</option>
-        <option>Loader</option><option>Pantry Boy</option>
-        <option>Electrician (ITI)</option><option>Carpenter (ITI)</option>
-      </select>
-      <input type="text" name="area" placeholder="Your Area (Noida / Delhi)">
-      <textarea name="details" rows="2" placeholder="Experience, shift preference, etc."></textarea>
-      <button type="submit">Submit Application</button>
-    </form>
+      <form action="submit.php" method="POST">
+        <input type="hidden" name="form_type" value="client">
 
-    <!-- Client Form -->
-    <form method="POST" action="submit.php">
-      <h2><i class="fa-solid fa-building"></i> Client Requirement Form</h2>
-      <input type="hidden" name="form_type" value="client">
-      <input type="text" name="name" placeholder="Full Name / Company Name" required>
-      <input type="tel" name="mobile" placeholder="Mobile Number" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="text" name="location" placeholder="Location (Noida / Delhi)" required>
-      <select name="position" required>
-        <option value="">Select Required Role</option>
-        <option>Helper</option><option>Warehouse & Labour</option>
-        <option>Delivery Boy</option><option>Office Boy</option>
-        <option>Tailor</option><option>Packing Worker</option>
-        <option>Loader</option><option>Pantry Boy</option>
-        <option>Electrician (ITI)</option><option>Carpenter (ITI)</option>
-      </select>
-      <input type="number" name="workers" placeholder="Number of Workers Needed" min="1" required>
-      <textarea name="additional" rows="3" placeholder="Mention timing, experience, etc."></textarea>
-      <button type="submit">Submit Requirement</button>
-    </form>
+        <label>Full Name / Company Name</label>
+        <input type="text" name="company" required>
 
-  </section>
+        <label>Mobile Number</label>
+        <input type="tel" name="mobile" required>
 
-  <!-- ROLES -->
-  <section class="roles">
-    <h3>Common Roles We Provide</h3>
-    <div class="role-grid">
-      <div>👷 Helper</div><div>🏭 Warehouse & Labour</div><div>🚚 Delivery Boy</div>
-      <div>🧹 Safai Karamchari</div><div>🧵 Tailor</div><div>📦 Packing Worker</div>
-      <div>🧰 Loader</div><div>☕ Pantry Boy</div><div>🔌 Electrician (ITI)</div><div>🪚 Carpenter (ITI)</div>
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Location (Noida / Delhi)</label>
+        <input type="text" name="location" required>
+
+        <label>Select Required Role</label>
+        <select name="position" required>
+          <option value="" disabled selected>Select role</option>
+          <option>👷 Helper</option>
+          <option>🏭 Warehouse Worker</option>
+          <option>🚚 Delivery Boy</option>
+          <option>🧹 Safai Karamchari</option>
+          <option>🧵 Tailor</option>
+          <option>📦 Packing Worker</option>
+          <option>🧰 Loader</option>
+          <option>☕ Pantry Boy</option>
+          <option>🔌 Electrician (ITI)</option>
+          <option>🪚 Carpenter (ITI)</option>
+          <option>🔧 Plumber</option>
+          <option>🛠 Mechanic</option>
+          <option>🛒 Retail Helper</option>
+          <option>🏗 Construction Labour</option>
+          <option>🌿 Gardener / Mali</option>
+          <option>🧴 Housekeeping Staff</option>
+          <option>📮 Office Boy</option>
+          <option>🍽 Hotel / Restaurant Helper</option>
+        </select>
+
+        <label>Number of Workers Needed</label>
+        <input type="number" name="workers" min="1" required>
+
+        <label>Mention timing, experience, etc.</label>
+        <textarea name="additional" rows="3"></textarea>
+
+        <button class="btn-submit">Submit Requirement</button>
+      </form>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>© 2025 NoidaWale.in | Manpower Supply in Noida & Delhi</footer>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-box">
+        <h3>About Noidavale.in</h3>
+        <p>Noidavale.in connects residents with trusted manpower & service providers across Noida.</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Wazidpur, Sector 63, Noida, UP</p>
+        <p><i class="fas fa-phone-alt"></i> +91 9580881157</p>
+        <p><i class="fas fa-envelope"></i> support@noidawale.in</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <p class="footer-bottom">© 2025 Noidavale.in | All Rights Reserved</p>
+  </footer>
 
   <!-- NAVBAR JS -->
   <script>
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('nav ul');
-
     menuToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
       menuToggle.classList.toggle('fa-times');
     });
   </script>
 
-  <!-- Form alert -->
+  <!-- FORM ALERT -->
   <script>
-    document.querySelectorAll("form").forEach(form=>{
-      form.addEventListener("submit",()=>{
-        alert("Form submitted successfully! We'll contact you soon.");
-      });
+    document.querySelector("form").addEventListener("submit", () => {
+      alert("Your requirement has been submitted! We will contact you shortly.");
     });
   </script>
 
 </body>
 </html>
-
