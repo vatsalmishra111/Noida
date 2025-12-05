@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Marketing Services - NoidaWale.in</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    /* ---------------- NAVBAR (Same as About Us Page) ---------------- */
+    nav {
+      background: #0082e6;
+      height: 80px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    nav .logo {
+      color: white;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      font-size: 16px;
+      text-transform: uppercase;
+      padding: 7px 13px;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background: #1b9bff;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        flex-direction: column;
+        justify-content: center;
+        transition: all 0.4s ease;
+      }
+
+      nav ul.active {
+        left: 0;
+      }
+
+      nav ul li a {
+        font-size: 20px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* ---------------- HERO ---------------- */
+    .hero {
+      margin-top: 80px;
+      height: 60vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+        url("https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 0 20px;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      color: #0082e6;
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
+    /* GRID */
+    .service-grid {
+      padding: 0 10% 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .service-box {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .service-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    .service-box i {
+      font-size: 40px;
+      color: #0082e6;
+      margin-bottom: 15px;
+    }
+
+    /* ---------------- CTA SECTION (FIXED) ---------------- */
+    .cta-section {
+      margin: 60px auto;
+      width: 85%;
+      padding: 40px;
+      text-align: center;
+      background: #0082e6;
+      color: white;
+      border-radius: 12px;
+
+      /* FIX FOOTER OVERLAP */
+      margin-bottom: 140px;
+    }
+
+    @media (max-width: 600px) {
+      .cta-section {
+        margin-bottom: 160px;
+      }
+    }
+
+    .cta-btn {
+      background: white;
+      color: #0082e6;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      transition: 0.3s;
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    .cta-btn:hover {
+      background: #e6f3ff;
+    }
+
+    /* ---------------- FOOTER (Same as About Page) ---------------- */
+    footer {
+      background: #2c3e50;
+      color: white;
+      padding: 50px 8%;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-box h3 {
+      margin-bottom: 15px;
+      color: #1b9bff;
+    }
+
+    .footer-box p {
+      color: #ddd;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footer-box ul li a {
+      color: #ccc;
+      transition: 0.3s;
+      font-size: 14px;
+    }
+
+    .footer-box ul li a:hover {
+      color: #1b9bff;
+    }
+
+    .social-links a {
+      color: white;
+      font-size: 20px;
+      margin-right: 10px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #1b9bff;
+    }
+
+    hr {
+      margin: 25px 0;
+      border: none;
+      border-top: 1px solid #555;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 13px;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">NoidaWale.in</div>
+    <i class="fas fa-bars menu-toggle"></i>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="aboutus.html">About Us</a></li>
+      <li><a href="jobs.html">Jobs</a></li>
+      <li><a class="active" href="marketing-services.html">Marketing Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Marketing Services</h1>
+    <p>Digital + Offline + Outdoor Advertising Solutions Across Noida & Delhi</p>
+  </section>
+
+  <!-- DIGITAL MARKETING -->
+  <h2 class="section-title">Digital Marketing Services</h2>
+
+  <div class="service-grid">
+    <div class="service-box"><i class="fas fa-bullhorn"></i>
+      <h3>Social Media Marketing</h3>
+      <p>Promote your brand on Instagram, Facebook & YouTube with targeted campaigns.</p>
+    </div>
+
+    <div class="service-box"><i class="fas fa-chart-line"></i>
+      <h3>Google Ads (PPC)</h3>
+      <p>Get more calls & leads using Google Search & Display Ads.</p>
+    </div>
+
+    <div class="service-box"><i class="fas fa-globe"></i>
+      <h3>Website Development</h3>
+      <p>Fast, mobile-friendly & SEO-optimized business websites.</p>
+    </div>
+
+    <div class="service-box"><i class="fas fa-search"></i>
+      <h3>SEO Services</h3>
+      <p>Rank your business in Google Search & Local Maps.</p>
+    </div>
+
+    <div class="service-box"><i class="fas fa-video"></i>
+      <h3>Reels & Video Editing</h3>
+      <p>Professional short videos, ads, and social media content.</p>
+    </div>
+
+    <div class="service-box"><i class="fas fa-pen-nib"></i>
+      <h3>Graphic Designing</h3>
+      <p>Logos, banners, business cards & creative branding material.</p>
+    </div>
+  </div>
+
+  <!-- OFFLINE MARKETING -->
+  <h2 class="section-title">Offline / Physical Marketing</h2>
+
+  <div class="service-grid">
+
+    <div class="service-box">
+      <i class="fas fa-file"></i>
+      <h3>Pamphlet / Flyer Printing</h3>
+      <p>High-quality printing with doorstep delivery in Noida & Delhi.</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-image"></i>
+      <h3>Flex Boards & Banners</h3>
+      <p>Glow sign boards, flex printing & shop branding.</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-street-view"></i>
+      <h3>Roll-Up Standee</h3>
+      <p>Perfect for exhibitions, shops, events & product branding.</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-book"></i>
+      <h3>Brochure & Catalog Printing</h3>
+      <p>Premium brochures for service & product-based businesses.</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-user-check"></i>
+      <h3>Ground Promotion Staff</h3>
+      <p>Sampling, leaflet distribution, and event promotion teams.</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-truck-loading"></i>
+      <h3>Leaflet Distribution</h3>
+      <p>Society, market & traffic signal leaflet distribution.</p>
+    </div>
+
+  </div>
+
+  <!-- OUTDOOR ADVERTISING -->
+  <h2 class="section-title">Outdoor Advertising (OOH)</h2>
+
+  <div class="service-grid">
+
+    <div class="service-box">
+      <i class="fas fa-taxi"></i>
+      <h3>Auto Rickshaw Ads</h3>
+      <p>Back/side panel ads across Noida & Delhi — high daily visibility.</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-bus"></i>
+      <h3>Bus Panel Ads</h3>
+      <p>Advertise on local buses and bus shelters at prime traffic spots.</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-map-marker-alt"></i>
+      <h3>Society Boards & RWAs</h3>
+      <p>Display your message inside high-traffic residential areas.</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-store"></i>
+      <h3>Shop & Market Branding</h3>
+      <p>Poster & banner placement at high footfall shops & markets.</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-road"></i>
+      <h3>Pole Kiosks</h3>
+      <p>Street pole ads across major roads & traffic intersections.</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-paint-brush"></i>
+      <h3>Wall Painting Ads</h3>
+      <p>Long-lasting brand visibility in rural & urban areas.</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-ad"></i>
+      <h3>Available Space Advertising</h3>
+      <p>We find visible ad spaces (walls, shutters, markets, highways).</p>
+    </div>
+
+    <div class="service-box">
+      <i class="fas fa-city"></i>
+      <h3>Mall & Indoor Branding</h3>
+      <p>Poster & standee placement inside malls & supermarkets.</p>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <h2>Need a Customized Marketing Plan?</h2>
+    <p>We provide digital + offline + outdoor advertising packages for all business types.</p>
+    <a href="contact.html" class="cta-btn">Contact Us</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+
+      <div class="footer-box">
+        <h3>About Noidavale.in</h3>
+        <p>Noidavale.in connects residents with trusted service providers across Noida.</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="aboutus.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-box">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Wazidpur, Sector 63, Noida, UP</p>
+        <p><i class="fas fa-phone-alt"></i> +91 9580881157</p>
+        <p><i class="fas fa-envelope"></i> support@noidawale.in</p>
+      </div>
+
+      <div class="footer-box">
+        <h3>Follow Us</h3>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <p class="footer-bottom">© 2025 Noidavale.in | All Rights Reserved</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('nav ul');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('fa-times');
+    });
+  </script>
+
+</body>
+</html>
